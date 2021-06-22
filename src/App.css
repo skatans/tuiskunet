@@ -1,38 +1,245 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+	background-color:#009999;
+	border-radius:0px;
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size:12px;
+	margin:0px;
+	padding:0px;
+	}
+
+a:link {text-decoration:none; color:#993333;}
+a:active {text-decoration:none; color:#252525;}
+a:visited {text-decoration:none; color:#993333;}
+a:hover {text-decoration:none; color:#252525;}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p {font-family: "MS Sans Serif", Tahoma, sans-serif;}
+
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16pt;
+  font-weight: 600;
+}
+
+.menuitems {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: normal;
+}
+
+.clear { height:1px; clear: both; }
+
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.gray-black {
+	border: 1px solid;
+	border-color: #c0c0c0 #000000 #000000 #c0c0c0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.white-gray {
+	border: 1px solid;
+	border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+.gray-white {
+	border: 1px solid;
+	border-color: #808080 #ffffff #ffffff #808080;
+}
+
+#mainpane {
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  display: flex;
+  overflow: visible;
+  position: relative;
+	width: auto;
+	border: 1px solid;
+  border-color: #000000 #c0c0c0 #c0c0c0 #000000;
+	padding:0;
+  margin:1px;
+}
+
+#mainpane:before {
+  content: " ";
+  position: absolute;
+	border: 1px solid;
+	border-color: #808080 #ffffff #ffffff #808080;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+}
+
+#mainwindow {
+  flex-basis: 40%;
+  min-width: 300px;
+  position: relative;
+  background-color: #c0c0c0;
+  border: 1px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 2px;
+}
+
+#mainwindow:before {
+  content: " ";
+  position: absolute;
+	border: 1px solid;
+	border-color: #c0c0c0 #000000 #000000 #c0c0c0;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+}
+
+#titlebar {
+  background-color:#000080;
+  color: #ffffff;
+  height: 14px;
+  padding: 2px;
+}
+
+#actionpane {
+  height: 76px;
+  display: flex;
+  margin: 1px 0px;
+  flex-direction: column;
+  background-color:#c0c0c0;
+}
+
+.actionrow {
+  height: 22px;
+  line-height: 22px;
+}
+
+.menuitems:first-letter {
+  text-decoration:underline;
+}
+
+#iconrow {
+  height: 26px;
+  line-height: 26px;
+  display: flex;
+}
+
+.actionrow::after {
+  content: " ";
+  width:1px;
+  height: 16px;
+	margin:2px 4px 2px 2px;
+	float:left;
+	border: 1px solid;
+	border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+#sidebar {
+	background:url(img/windowbackground.png);
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+	float:left;
+	width:135px;
+
+	padding-left:18px;
+	padding-top:40px;
+}
+
+div {
+	padding:0;
+	margin:0;
+}
+
+.actionimg{
+	width: 20px;
+	height: 20px;
+	margin:3px;
+}
+
+.divider {
+  width:0px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+#arrows {
+	width:72px;
+	background: url(img/spritemap.png) -16px -48px;
+}
+#folder {
+	background: url(img/spritemap.png) -94px -48px;
+}
+#sax {
+	width: 15px;
+	background: url(img/spritemap.png) -130px -48px;
+}
+#copy {
+	background: url(img/spritemap.png) -154px -48px;
+}
+#paste {
+	width: 19px;
+	background: url(img/spritemap.png) -181px -48px;
+}
+#back {
+	width: 18px;
+	background: url(img/spritemap.png) -215px -48px;
+}
+#ruksi {
+	width: 18px;
+	background: url(img/spritemap.png) -248px -48px;
+}
+#sormi {
+	width: 18px;
+	background: url(img/spritemap.png) -275px -48px;
+}
+#lista {
+	width: 35px;
+	background: url(img/spritemap.png) -307px -48px;
+}
+
+.navicon {
+  margin: 0px;
+}
+
+#computer {
+	float:left;
+	height:14px;
+	width: 16px;
+	background: url(img/spritemap.png) -1px -2px;
+} 
+
+#minimize {
+	float:right;
+	height:14px;
+	width: 16px;
+	background: url(img/spritemap.png) -516px -2px;
+} 
+
+#maximize {
+	float:right;
+	height:14px;
+	width: 16px;
+	background: url(img/spritemap.png) -532px -2px;
+} 
+
+#exit {
+	float:right;
+	height:14px;
+	width: 16px;
+  margin-left: 1px;
+	background: url(img/spritemap.png) -550px -2px;
 }

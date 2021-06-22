@@ -1,0 +1,93 @@
+body{
+	background-color:#009999;
+	moz-border-radius:0px;
+	border-radius:0px;
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size:16px;
+	margin:0px;
+	padding:0px;
+	}
+
+a:link {text-decoration:none; color:#993333;}
+a:active {text-decoration:none; color:#252525;}
+a:visited {text-decoration:none; color:#993333;}
+a:hover {text-decoration:none; color:#252525;}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {font-family: "MS Sans Serif", Tahoma, sans-serif;}
+
+.clear { height:1px; clear: both; }
+
+
+.luokatonta {
+	background:url();
+	background-repeat:no-repeat; 
+	
+	width:200px;
+	height:100px;
+	
+	margin:0 auto; 
+	margin-top:50px;
+}
+
+.ikkuna {
+	background:url(/sivut/rakenne/ikkuna.png);
+	background-repeat:no-repeat; 
+	
+	width:576px;
+	height:106px;
+	
+	margin:0 auto; 
+	margin-top:10px;
+}
+
+.kokoelma {
+	background:url(/sivut/rakenne/tausta.png);
+	background-repeat:repeat-y;
+	
+	margin:0 auto; 
+	
+	width:576px;
+	min-height:280px;
+}
+
+.sivup {
+	background:url(/sivut/rakenne/paneeli.png);
+	background-repeat:no-repeat;
+	background-position left top;
+	
+	float:left;
+	width:140px;
+	height:280px;
+	
+	margin-left:6px;
+	padding:10px;
+	padding-top:110px;
+	
+}
+
+.sisalto {
+	background:url();
+	
+	width:390px;
+	height:auto;
+	
+	margin-left:160px;
+	padding:10px;
+	
+}
+
+.alareuna{
+	background:url(/sivut/rakenne/alareuna.png);
+	background-repeat:no-repeat;
+	
+	height:6px;
+	width:576px;
+	margin:0 auto;
+	margin-bottom:10px;
+	clear: both; 
+}
