@@ -1,9 +1,5 @@
-html, body {
-  height: 100%;
-}
-
-#root {
-  height: 100%;
+html, body, #root {
+	height: 100%;
 }
 
 body{
@@ -13,7 +9,7 @@ body{
 	font-size:12px;
 	margin:0px;
 	padding:0px;
-	}
+}
 
 a:link {text-decoration:none; color:#993333;}
 a:active {text-decoration:none; color:#252525;}
@@ -21,31 +17,25 @@ a:visited {text-decoration:none; color:#993333;}
 a:hover {text-decoration:none; color:#252525;}
 
 img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 p {font-family: "MS Sans Serif", Tahoma, sans-serif;}
 
 h1 {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 16pt;
-  font-weight: 600;
-}
-
-.menuitems {
-  vertical-align: middle;
-  display: inline-block;
-  line-height: normal;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 16pt;
+	font-weight: 600;
 }
 
 .clear { height:1px; clear: both; }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
 
 .gray-black {
@@ -64,84 +54,92 @@ h1 {
 }
 
 #mainpane {
-  background-repeat: no-repeat;
-  background-color: #ffffff;
-  display: flex;
-  overflow: visible;
-  position: relative;
+	background-repeat: no-repeat;
+	background-color: #ffffff;
+	display: flex;
+	overflow: visible;
+	position: relative;
 	width: auto;
+	min-height: 200px;;
 	border: 1px solid;
-  border-color: #000000 #c0c0c0 #c0c0c0 #000000;
+	border-color: #000000 #c0c0c0 #c0c0c0 #000000;
 	padding:0;
-  margin:1px;
+	margin:1px;
 }
 
 #mainpane:before {
-  content: " ";
-  position: absolute;
+	content: " ";
+	position: absolute;
 	border: 1px solid;
 	border-color: #808080 #ffffff #ffffff #808080;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
 }
 
 #mainwindow {
-  flex-basis: 40%;
-  min-width: 300px;
-  position: relative;
-  background-color: #c0c0c0;
-  border: 1px solid;
-  border-color: #ffffff #808080 #808080 #ffffff;
-  padding: 2px;
+	flex-basis: 40%;
+	min-width: 300px;
+	position: relative;
+	background-color: #c0c0c0;
+	border: 1px solid;
+	border-color: #ffffff #808080 #808080 #ffffff;
+	padding: 2px;
 }
 
 #mainwindow:before {
-  content: " ";
-  position: absolute;
+	content: " ";
+	position: absolute;
 	border: 1px solid;
 	border-color: #c0c0c0 #000000 #000000 #c0c0c0;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
 }
 
 #titlebar {
-  background-color:#000080;
-  color: #ffffff;
-  height: 14px;
-  padding: 2px;
+	background-color:#000080;
+	color: #ffffff;
+	height: 14px;
+	padding: 2px;
 }
 
 #actionpane {
-  height: 76px;
-  display: flex;
-  margin: 1px 0px;
-  flex-direction: column;
-  background-color:#c0c0c0;
+	height: 76px;
+	display: flex;
+	margin: 1px 0px;
+	flex-direction: column;
+	background-color:#c0c0c0;
 }
 
 .actionrow {
-  height: 22px;
-  line-height: 22px;
+	height: 22px;
+	line-height: 22px;
+}
+
+.menuitems {
+	vertical-align: middle;
+	display: inline-block;
+	line-height: normal;
+	padding: 0px 4px;
 }
 
 .menuitems:first-letter {
-  text-decoration:underline;
+	text-decoration:underline;
 }
 
 #iconrow {
-  height: 26px;
-  line-height: 26px;
-  display: flex;
+	height: 26px;
+	line-height: 26px;
+	display: flex;
 }
 
 .actionrow::after {
-  content: " ";
-  width:1px;
-  height: 16px;
+	content: " ";
+	width:1px;
+	height: 16px;
 	margin:2px 4px 2px 2px;
 	float:left;
 	border: 1px solid;
@@ -150,10 +148,11 @@ h1 {
 
 #sidebar {
 	background:url(img/windowbackground.png);
-  background-repeat: no-repeat;
-  background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-color: #ffffff;
 	float:left;
-	width:135px;
+	width:150px;
+	height:auto;
 
 	padding-left:18px;
 	padding-top:40px;
@@ -167,13 +166,13 @@ div {
 .actionimg{
 	width: 20px;
 	height: 20px;
-	margin:3px;
+	margin:3px 4px;
 }
 
 .divider {
-  width:0px;
-  height: 20px;
-  margin-top: 2px;
+	width:0px;
+	height: 20px;
+	margin-top: 2px;
 }
 
 #arrows {
@@ -240,6 +239,6 @@ div {
 	float:right;
 	height:14px;
 	width: 16px;
-  margin-left: 1px;
+	margin-left: 1px;
 	background: url(img/spritemap.png) -550px -2px;
 }
