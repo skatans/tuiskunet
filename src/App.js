@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink, Redirect } from 'react-router-dom'
 
 import * as Content from './content/content.js'
 import './App.css';
@@ -22,11 +22,14 @@ const Sidebar = () => {
 const MainPane = () => {
   return (
     <div id="mainpane">
-      <Router>
+      <Router basename={'/tn'}>
         <Sidebar />
           {contents.map(content => (
-            <Route exact path={content.path} component={Content.componentRegistry[content.component]} key={content.key}/>
+            <Route exact path={content.path} component={Content[content.component]} key={content.key}/>
           ))}
+          <Route path="/birdsimulator" render={() => {
+              return <Redirect  to="/birdsimulator/index.html" />
+            }} />
       </Router>
     </div>
   )

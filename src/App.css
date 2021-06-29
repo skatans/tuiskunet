@@ -69,11 +69,15 @@ h1 {
 #mainpane {
 	background-repeat: no-repeat;
 	background-color: #ffffff;
-	display: flex;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width:auto;
+	flex-grow: 2;
+	justify-content: flex-start;
 	overflow: visible;
 	position: relative;
-	width: auto;
-	min-height: 300px;;
+	min-height: 300px;
 	border: 1px solid;
 	border-color: #000000 #c0c0c0 #c0c0c0 #000000;
 	padding:0;
@@ -92,13 +96,14 @@ h1 {
 }
 
 #mainwindow {
-	flex-basis: 40%;
 	min-width: 300px;
+	flex: 0.2 0 400px;
 	position: relative;
 	background-color: #c0c0c0;
 	border: 1px solid;
 	border-color: #ffffff #808080 #808080 #ffffff;
 	padding: 2px;
+	z-index: 0;
 }
 
 #mainwindow:before {
@@ -130,7 +135,7 @@ h1 {
 
 .actionrow {
 	height: 24px;
-	line-height: 24px;
+	line-height: 20px;
 }
 
 .menuitems {
@@ -146,14 +151,14 @@ h1 {
 
 #iconrow {
 	height: 28px;
-	line-height: 28px;
+	line-height: 24px;
 	display: flex;
 }
 
 .actionrow::after {
 	content: " ";
 	width:1px;
-	height: 16px;
+	height: 75%;
 	margin:2px 4px 2px 2px;
 	float:left;
 	border: 1px solid;
@@ -169,6 +174,8 @@ h1 {
 	height:auto;
 	padding-left:18px;
 	padding-top:40px;
+	flex-basis:auto;
+	flex:none;
 }
 
 ul.sidenav {
