@@ -1,23 +1,20 @@
+import React from 'react'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+
+import * as Content from './content/content.js'
 import './App.css';
 
-const SidebarContent = () => {
-  return (
-    <ul>
-      <li>
-        asd
-      </li>
-      <li>
-        asfas
-      </li>
-    </ul>
-  )
-}
+let contents = require('./content/content.json');
 
 const Sidebar = () => {
   return (
     <div id="sidebar">
       <h1>Tuiskun kotisivut</h1>
-      <SidebarContent />
+        <ul className="sidenav">
+          {contents.map(content => (
+            <li className="sidenav"><NavLink to={content.path}>{content.title}</NavLink></li>
+          ))}
+      </ul>
     </div>
   )
 }
@@ -25,7 +22,12 @@ const Sidebar = () => {
 const MainPane = () => {
   return (
     <div id="mainpane">
-      <Sidebar />
+      <Router>
+        <Sidebar />
+          {contents.map(content => (
+            <Route exact path={content.path} component={Content.componentRegistry[content.component]} key={content.key}/>
+          ))}
+      </Router>
     </div>
   )
 }
@@ -93,12 +95,14 @@ const MainWindow = () => {
   )
 }
 
-const App = () => {
-  return (
-    <div className="container">
-        <MainWindow />
-    </div>
-  )
+class App extends React.Component {
+    render() {
+    return (
+      <div className="container">
+          <MainWindow />
+      </div>
+    )
+  }
 }
 
 export default App;

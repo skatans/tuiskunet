@@ -11,6 +11,14 @@ body{
 	padding:0px;
 }
 
+*, ::before, ::after {
+	box-sizing: border-box;
+}
+
+::before, ::after {
+	z-index: -1;
+}
+
 a:link {text-decoration:none; color:#993333;}
 a:active {text-decoration:none; color:#252525;}
 a:visited {text-decoration:none; color:#993333;}
@@ -53,6 +61,11 @@ h1 {
 	border-color: #808080 #ffffff #ffffff #808080;
 }
 
+.content {
+	margin: 10px;
+	flex: auto;
+}
+
 #mainpane {
 	background-repeat: no-repeat;
 	background-color: #ffffff;
@@ -60,7 +73,7 @@ h1 {
 	overflow: visible;
 	position: relative;
 	width: auto;
-	min-height: 200px;;
+	min-height: 300px;;
 	border: 1px solid;
 	border-color: #000000 #c0c0c0 #c0c0c0 #000000;
 	padding:0;
@@ -102,12 +115,13 @@ h1 {
 #titlebar {
 	background-color:#000080;
 	color: #ffffff;
-	height: 14px;
+	height: 18px;
 	padding: 2px;
 }
 
 #actionpane {
 	height: 76px;
+	width: 100%;
 	display: flex;
 	margin: 1px 0px;
 	flex-direction: column;
@@ -115,8 +129,8 @@ h1 {
 }
 
 .actionrow {
-	height: 22px;
-	line-height: 22px;
+	height: 24px;
+	line-height: 24px;
 }
 
 .menuitems {
@@ -131,8 +145,8 @@ h1 {
 }
 
 #iconrow {
-	height: 26px;
-	line-height: 26px;
+	height: 28px;
+	line-height: 28px;
 	display: flex;
 }
 
@@ -151,11 +165,19 @@ h1 {
 	background-repeat: no-repeat;
 	background-color: #ffffff;
 	float:left;
-	width:150px;
+	width:170px;
 	height:auto;
-
 	padding-left:18px;
 	padding-top:40px;
+}
+
+ul.sidenav {
+	list-style-type:none;
+	padding-left: 20px;
+}
+
+li.sidenav {
+	padding: 5px 0px;
 }
 
 div {
