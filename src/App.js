@@ -1,35 +1,33 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, NavLink, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 
 import * as Content from './content/content.js'
 import './App.css';
 
 let contents = require('./content/content.json');
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     <div id="sidebar">
-      <h1>Tuiskun kotisivut</h1>
+      {console.log(props.title)}
+      <h1>{props.title}</h1>
         <ul className="sidenav">
-          {contents.map(content => (
-            <li className="sidenav"><NavLink to={content.path}>{content.title}</NavLink></li>
+          {contents.filter(content => content.nav === "sidebar").map(content => (
+            <li className="sidenav" key={content.title}><NavLink to={content.path}>{content.title}</NavLink></li>
           ))}
       </ul>
     </div>
   )
 }
 
-const MainPane = () => {
+const MainPane = (props) => {
   return (
     <div id="mainpane">
       <Router basename={'/tn'}>
-        <Sidebar />
+        <Sidebar title={props.title} />
           {contents.map(content => (
             <Route exact path={content.path} component={Content[content.component]} key={content.key}/>
           ))}
-          <Route path="/birdsimulator" render={() => {
-              return <Redirect  to="/birdsimulator/index.html" />
-            }} />
       </Router>
     </div>
   )
@@ -89,20 +87,31 @@ const NavigationPane = () => {
 }
 
 
-const MainWindow = () => {
+const MainWindow = (props) => {
   return (
     <div id="mainwindow">
       <HeaderPane />
-      <MainPane />
+      <MainPane title={props.title} />
     </div>
   )
 }
 
 class App extends React.Component {
-    render() {
+  constructor(props) {
+    super(props);
+    this.state = {title: ""};  }
+
+  componentDidMount() {
+    this.setState({ title: "Tuiskun kotisivut"})
+  }
+
+  render() {
+
+  
+
     return (
       <div className="container">
-          <MainWindow />
+          <MainWindow title={this.state.title} />
       </div>
     )
   }

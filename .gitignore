@@ -11,6 +11,9 @@
 # production
 /build
 
+# content is in a separate repo
+/src/content
+
 # misc
 .DS_Store
 .env.local
