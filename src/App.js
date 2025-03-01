@@ -12,7 +12,7 @@ const Sidebar = (props) => {
       {console.log(props.title)}
       <h1>{props.title}</h1>
         <ul className="sidenav">
-          {contents.filter(content => content.nav === "sidebar").map(content => (
+          {contents.filter(content => content.nav === "sidebar" && content.visible).map(content => (
             <li className="sidenav" key={content.title}><NavLink to={content.path}>{content.title}</NavLink></li>
           ))}
       </ul>
@@ -23,19 +23,19 @@ const Sidebar = (props) => {
 const MainPane = (props) => {
   return (
     <div id="mainpane">
-      <Router basename={'/tn'}>
-        <Sidebar title={props.title} />
-          {contents.map(content => (
+        <div className="d-none d-md-block">
+          <Sidebar title={props.title} />
+        </div>
+          {contents.filter(content => content.visible).map(content => (
             <Route exact path={content.path} component={Content[content.component]} key={content.key}/>
           ))}
-      </Router>
     </div>
   )
 }
 
 const HeaderPane = () => {
   return (
-    <div id="headerpane">
+    <div id="headerpane" style={{width: "100%", paddingLeft: "1px", paddingRight: "1px"}}>
       <TitleBar />
       <ActionPane />
     </div>
@@ -79,9 +79,19 @@ const ActionPane = () => {
 }
 
 const NavigationPane = () => {
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   return (
     <div id="navigationpane" className="actionrow white-gray">
-      <span className="menuitems">File</span> <span className="menuitems">Edit</span>
+      <div className="d-none d-md-none">
+        <span className="menuitems">File</span> <span className="menuitems">Edit</span>
+      </div>
+      <div className="d-block d-md-block text-dark">
+      {contents.filter(content => content.nav === "sidebar" && content.visible).map(content => (
+            <span className="menuitems" key={content.title}><NavLink to={content.path}>{capitalizeFirstLetter(content.title)}</NavLink></span>
+          ))}
+      </div>
     </div>
   )
 }
@@ -89,9 +99,11 @@ const NavigationPane = () => {
 
 const MainWindow = (props) => {
   return (
-    <div id="mainwindow">
+    <div id="mainwindow" className='m-2' style={{maxWidth: '100%', position: "relative", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center"}}>  
+    <Router basename={'/tn'}>
       <HeaderPane />
       <MainPane title={props.title} />
+      </Router>
     </div>
   )
 }
@@ -106,12 +118,9 @@ class App extends React.Component {
   }
 
   render() {
-
-  
-
     return (
-      <div className="container">
-          <MainWindow title={this.state.title} />
+      <div className="container" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', height: '100vh', overflow: 'visible', position: 'relative' }}>
+        <MainWindow title={this.state.title} />
       </div>
     )
   }

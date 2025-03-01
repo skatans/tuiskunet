@@ -23,6 +23,9 @@ a:link {text-decoration:none; color:#993333;}
 a:active {text-decoration:none; color:#252525;}
 a:visited {text-decoration:none; color:#993333;}
 a:hover {text-decoration:none; color:#252525;}
+#actionpane a:link {text-decoration:none; color:#252525;}
+#actionpane a:visited {text-decoration:none; color:#252525;}
+#actionpane a:hover {text-decoration:none; color:#616161;}
 
 img {
 	max-width: 100%;
@@ -45,12 +48,6 @@ h2 {
 
 .clear { height:1px; clear: both; }
 
-.container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-}
 
 .gray-black {
 	border: 1px solid;
@@ -102,8 +99,6 @@ h2 {
 	width:auto;
 	flex-grow: 2;
 	justify-content: flex-start;
-	overflow: visible;
-	position: relative;
 	min-height: 300px;
 	border: 1px solid;
 	border-color: #000000 #c0c0c0 #c0c0c0 #000000;
@@ -112,7 +107,6 @@ h2 {
 }
 
 #mainpane:before {
-	content: " ";
 	position: absolute;
 	border: 1px solid;
 	border-color: #808080 #ffffff #ffffff #808080;
@@ -125,7 +119,7 @@ h2 {
 #mainwindow {
 	min-width: 300px;
 	width: auto;
-	flex: 0.2 0 400px;
+	flex: 0.2 0 500px;
 	position: relative;
 	background-color: #c0c0c0;
 	border: 1px solid;
@@ -201,7 +195,7 @@ h2 {
 	width:170px;
 	height:auto;
 	padding-left:18px;
-	padding-top:40px;
+	padding-top:50px;
 	flex-basis:auto;
 	flex:none;
 }
